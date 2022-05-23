@@ -7,7 +7,7 @@ Due to my lack of experience with Symfony I couldn't manage to make the web app 
 
 Steps
 
-1) Clone this repository
+1) Clone this repository and CD to the cloned Directory
 
 2) At terminal Run: docker-compose up
 
