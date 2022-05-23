@@ -15,10 +15,10 @@ Steps
 
 4) At terminal Run: cd bin
 
-%) At terminal (if requested to run any command) Run: composer require symfony/runtime
+5) At terminal (if requested to run any command) Run: composer require symfony/runtime
 
 
-In order for this project work the 'integrityChalenge' DataBase(schema) must be created with the following tables:
+6) In order for this project work the 'integrityChalenge' DataBase(schema) must be created with the following tables:
 
 ![image](https://user-images.githubusercontent.com/89182998/169781351-c3c4a076-31f5-4b6b-ac0f-e7c3cfd80660.png)
 
