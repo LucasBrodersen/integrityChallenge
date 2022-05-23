@@ -7,15 +7,15 @@ Due to my lack of experience with Symfony I couldn't manage to make the web app 
 
 Steps
 
-Clone this link
+1) Clone this repository
 
-Run: docker-compose up
+2) At terminal Run: docker-compose up
 
-Run: docker exec -it <service_id> bash
+3) At terminal Run: docker exec -it <service_id> bash
 
-Run: cd bin
+4) At terminal Run: cd bin
 
-Run: composer require symfony/runtime
+%) At terminal (if requested to run any command) Run: composer require symfony/runtime
 
 
 In order for this project work the 'integrityChalenge' DataBase(schema) must be created with the following tables:
