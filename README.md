@@ -20,6 +20,8 @@ Steps
 
 6) In order for this project work the 'integrityChalenge' DataBase(schema) must be created with the following tables:
 
+ -- This project uses MariaDB --
+
 ![image](https://user-images.githubusercontent.com/89182998/169781351-c3c4a076-31f5-4b6b-ac0f-e7c3cfd80660.png)
 
 !Importat: You can run the code below to generate the needed table (Please make sure you select 'integrityChalenge' schema).
