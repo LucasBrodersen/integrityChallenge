@@ -55,4 +55,4 @@ create table request
 )
     collate = utf8mb4_unicode_ci;
 
-7) You're ready to run the command:  php bin/console app:URL <URL>
+7) You're ready to run the command:  php bin/console app:URL <your_URL>
