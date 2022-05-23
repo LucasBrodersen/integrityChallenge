@@ -56,3 +56,4 @@ create table request
     collate = utf8mb4_unicode_ci;
 
 7) You're ready to run the command:  php bin/console app:URL <your_URL>
+8) In order to confirm that the record was added into db you can run "php bin/console dbal:run-sql 'SELECT * FROM request'"
