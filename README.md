@@ -15,7 +15,7 @@ Steps
 
 4) At terminal Run: cd bin
 
-5) At terminal (if requested to run any command) Run: composer require symfony/runtime
+5) At terminal (if requested when trying to run any command like: php bin/console list) Run: composer require symfony/runtime
 
 
 6) In order for this project work the 'integrityChalenge' DataBase(schema) must be created with the following tables:
@@ -55,3 +55,4 @@ create table request
 )
     collate = utf8mb4_unicode_ci;
 
+7) You're ready to run the command:  php bin/console app:URL <URL>
