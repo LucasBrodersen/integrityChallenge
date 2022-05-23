@@ -15,7 +15,7 @@ use Symfony\Component\HttpClient\HttpClient;
 
 #[AsCommand(
     name: 'app:URL',
-    description: 'Testezera',
+    description: 'Save the final URL and the HTTP Headers of a valid URL',
 )]
 class URLCommand extends Command
 {
@@ -23,7 +23,7 @@ class URLCommand extends Command
     {
         $this
             ->addArgument('arg1', InputArgument::OPTIONAL, 'Argument description')
-            ->addOption('option1', null, InputOption::VALUE_NONE, 'Option description')
+            ->addOption('option1', null, InputOption::VALUE_NONE, 'Option description') // Not needed, left just in case
         ;
     }
     
@@ -39,15 +39,16 @@ class URLCommand extends Command
         }
 
         if ($arg1) {
-            $io->note(sprintf('You passed an argument: %s', $arg1));
+            $io->note(sprintf('You passed an argument: %s', $arg1)); 
             $client = HttpClient::create();
             $response = $client->request('GET', $arg1);
             $content = $response->getContent(); // para aguardar por resposta
-    
+
+            $io->note(sprintf("Status Code: %s", strval($response->getStatusCode())));
             $finalURL = $response->getInfo('url');
             $io->note(sprintf('Final URL: %s', $response->getInfo('url')));
             $test = $response->getHeaders();
-            $io->note(sprintf("Headers: %d", sizeof($test)));
+            $io->note(sprintf("Total Headers: %d", sizeof($test)));
             ;
             // URL convertidas para base 64 para prevenir erro de caracteres tipo '/' ou '.', entre outros.
             $urlFirstToPost = base64_encode($arg1);
@@ -58,7 +59,7 @@ class URLCommand extends Command
 
             //fazer post na url
             $client->request('POST', 'http://localhost:8000/request/'.$urlFirstToPost.'/'.$urlFinalToPost.'/'.$dateToPost, []);
-            $io->note(sprintf("Status Code: %s", strval($response->getStatusCode())));
+            
 
             //Faz loop nos header para pegar os keys e depois os valores de cada key
             $headervaluepost = "";
@@ -67,11 +68,13 @@ class URLCommand extends Command
             $mykey = $key;
             $io->note(sprintf($mykey));
             foreach ($test[$mykey] as $newvar) {
+                $io->note(sprintf(strval($newvar)));
                 $headervaluepost = strval($newvar);
                 $headervaluepost =  base64_encode($headervaluepost);
                 $client->request('POST', 'http://localhost:8000/headers/'.$urlFinalToPost.'/'.$mykey.'/'.$headervaluepost, []);
-             
+                
                } 
+               $io->note(sprintf('**************************************************************************************************'));
             }
             $io->success('URL registered successfully');   
         }

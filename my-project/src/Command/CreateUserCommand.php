@@ -12,10 +12,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\HttpClient\HttpClient;
 
+// PLEASE DISCONSIDER THIS COMMAND IT WAS JUST USED FOR TESTING AND STUDIES PURPOSE
 
 #[AsCommand(
     name: 'app:CreateUserCommand',
-    description: 'Testezera',
+    description: 'Just testing it',
 )]
 class CreateUserCommand extends Command
 {
@@ -61,7 +62,9 @@ class CreateUserCommand extends Command
             {
             $mykey = $key;
             $io->note(sprintf($mykey));
+            $io->note(sprintf('********************************************************************************************************************'));
             foreach ($test[$mykey] as $newvar) {
+                $io->note(sprintf(strval($newvar)));
                 $headervaluepost = strval($newvar);
                 $headervaluepost =  base64_encode($headervaluepost);
                 $client->request('POST', 'http://localhost:8000/headers/'.$urlFinalToPost.'/'.$mykey.'/'.$headervaluepost, []);
@@ -76,7 +79,7 @@ class CreateUserCommand extends Command
             // ...
         }
 
-        $io->success('Deu certo fei');
+        $io->success('Worked');
 
         return Command::SUCCESS;
     }

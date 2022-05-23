@@ -12,6 +12,8 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\Console\Helper\Table;
 
+// PLEASE DISCONSIDER THIS COMMAND IT WAS JUST USED FOR TESTING AND STUDIES PURPOSE
+
 #[AsCommand(
     name: 'app:firstcommand',
     description: 'Add a short description for your command',
