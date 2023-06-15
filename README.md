@@ -1,10 +1,3 @@
-# integrityChallenge
-My first time using Docker, Composer and Symfony. A great motivation and opportunity to learn!
-
-
-In this project I made  CLI Application that first checks wheter a URL is valid, if so it saves the final URL into DB and and also it Headers.
-Due to my lack of experience with Symfony I couldn't manage to make the web app but I certainly will make it soon.
-
 Steps
 
 1) Clone this repository and CD to the cloned Directory
